@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Shield — Protección Jurídica, Gestión del Talento y Control Empresarial</title>
+<meta name="description" content="Sistema integral de protección jurídica preventiva, gestión del talento y control empresarial para pymes. Más control. Más productividad. Menos riesgos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C1422;
+    --ink-2:#08101C;
+    --panel:#121E33;
+    --panel-2:#16243C;
+    --brass:#C9A24B;
+    --brass-bright:#E7CD86;
+    --parchment:#F5F0E5;
+    --parchment-2:#EBE3D2;
+    --slate:#94A3BC;
+    --slate-dim:#6C7A92;
+    --risk:#C75D54;
+    --line:rgba(201,162,75,.22);
+    --line-soft:rgba(148,163,188,.16);
+    --shadow:0 24px 60px -24px rgba(0,0,0,.7);
+    --serif:"Cormorant Garamond",Georgia,serif;
+    --sans:"Archivo",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--brass);color:var(--ink)}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--brass);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:24px;height:1px;background:var(--brass);display:inline-block;opacity:.7}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.07;letter-spacing:-.01em}
+
+  /* ---------- shield mark ---------- */
+  .crest{display:block}
+  .crest .body{fill:none;stroke:var(--brass);stroke-width:2.4}
+  .crest .fillbody{fill:rgba(201,162,75,.06)}
+  .crest .chev{fill:none;stroke:var(--brass-bright);stroke-width:2.2}
+  .crest .pale{stroke:var(--brass);stroke-width:1.4;opacity:.55}
+  .crest .star{fill:var(--brass-bright)}
+
+  /* ---------- top nav ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(12,20,34,.78);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .crest{width:30px;height:36px}
+  .brand .name{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:.02em;line-height:1}
+  .brand .name b{color:var(--brass)}
+  .brand .tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.28em;color:var(--slate);text-transform:uppercase;display:block;margin-top:3px}
+  .navlinks{display:flex;gap:30px;font-size:14px;color:var(--slate)}
+  .navlinks a:hover{color:var(--parchment)}
+  .btn{
+    font-family:var(--sans);font-weight:600;font-size:14px;
+    padding:11px 22px;border-radius:2px;cursor:pointer;border:1px solid var(--brass);
+    transition:.25s ease;display:inline-block;letter-spacing:.01em;
+  }
+  .btn-solid{background:var(--brass);color:var(--ink)}
+  .btn-solid:hover{background:var(--brass-bright);box-shadow:0 0 0 4px rgba(201,162,75,.15)}
+  .btn-ghost{background:transparent;color:var(--brass)}
+  .btn-ghost:hover{background:rgba(201,162,75,.1)}
+  @media(max-width:860px){.navlinks{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:96px 0 88px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(900px 520px at 78% 12%,rgba(201,162,75,.10),transparent 60%),
+      radial-gradient(700px 600px at 8% 90%,rgba(22,36,60,.9),transparent 70%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(38px,5.6vw,68px);margin:22px 0 0}
+  .hero h1 em{font-style:italic;color:var(--brass-bright)}
+  .hero .lede{color:var(--slate);font-size:18px;max-width:46ch;margin-top:24px}
+  .motto{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--parchment);margin-top:30px;padding-left:18px;border-left:2px solid var(--brass)}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .hero-stats{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
+  .hero-stats .n{font-family:var(--serif);font-size:34px;color:var(--brass-bright);line-height:1}
+  .hero-stats .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-top:8px;max-width:16ch}
+
+  .hero-art{display:flex;justify-content:center;align-items:center}
+  .hero-art .crest{width:min(320px,80%);height:auto;filter:drop-shadow(0 30px 50px rgba(0,0,0,.55))}
+  @media(max-width:920px){
+    .hero .wrap{grid-template-columns:1fr;gap:30px}
+    .hero-art{order:-1}
+    .hero-art .crest{width:190px}
+  }
+
+  /* ---------- section frame ---------- */
+  section{position:relative}
+  .band{padding:92px 0}
+  .band-parch{background:var(--parchment);color:#22282E}
+  .band-parch .eyebrow{color:#9A7A1E}
+  .band-parch .eyebrow::before{background:#9A7A1E}
+  .band-parch .muted{color:#5C6470}
+  .sec-head{max-width:720px}
+  .sec-head h2{font-size:clamp(30px,3.8vw,46px);margin-top:18px}
+  .sec-head p{margin-top:18px;font-size:17px;color:var(--slate)}
+  .band-parch .sec-head p{color:#5C6470}
+
+  /* ---------- problem ---------- */
+  .pull{font-family:var(--serif);font-size:clamp(26px,3.4vw,40px);line-height:1.2;max-width:18ch;margin:0 0 8px}
+  .pull .hi{color:var(--brass)}
+  .risk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin-top:48px}
+  .risk-grid .cell{background:var(--ink);padding:22px 20px;display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:var(--parchment-2);transition:.25s}
+  .risk-grid .cell:hover{background:var(--panel)}
+  .risk-grid .cell .dot{width:7px;height:7px;border-radius:50%;background:var(--risk);margin-top:8px;flex:none;box-shadow:0 0 0 4px rgba(199,93,84,.12)}
+  @media(max-width:860px){.risk-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.risk-grid{grid-template-columns:1fr}}
+
+  /* ---------- axes ---------- */
+  .axes{margin-top:54px;border-top:1px solid var(--line)}
+  .axis{
+    display:grid;grid-template-columns:96px 1fr 1.1fr;gap:30px;
+    padding:34px 0;border-bottom:1px solid var(--line);align-items:start;
+    transition:.3s;
+  }
+  .axis:hover{background:linear-gradient(90deg,rgba(201,162,75,.05),transparent)}
+  .axis .num{font-family:var(--serif);font-size:46px;color:var(--brass);line-height:.9}
+  .axis .num span{font-family:var(--mono);font-size:11px;display:block;color:var(--slate-dim);letter-spacing:.2em;margin-top:8px}
+  .axis h3{font-size:25px}
+  .axis .desc{color:var(--slate);font-size:15px}
+  .axis .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .axis .tags span{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--brass);border:1px solid var(--line);padding:5px 10px;border-radius:2px}
+  @media(max-width:760px){.axis{grid-template-columns:60px 1fr;gap:18px}.axis .desc-wrap{grid-column:1/-1}}
+
+  /* ---------- dashboard / KPI ---------- */
+  .dash{
+    margin-top:54px;background:linear-gradient(180deg,var(--panel),var(--ink-2));
+    border:1px solid var(--line);border-radius:6px;padding:34px;box-shadow:var(--shadow);
+  }
+  .dash-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line-soft);padding-bottom:18px;margin-bottom:8px;flex-wrap:wrap;gap:12px}
+  .dash-top .t{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--slate)}
+  .dash-top .live{font-family:var(--mono);font-size:11px;color:var(--brass-bright);display:flex;align-items:center;gap:8px}
+  .dash-top .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#5FBF7A;box-shadow:0 0 0 4px rgba(95,191,122,.18)}
+  .gauges{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .gauge{padding:22px 14px 18px;text-align:center;border-radius:4px;transition:.3s}
+  .gauge:hover{background:rgba(201,162,75,.05)}
+  .gauge svg{width:104px;height:104px;display:block;margin:0 auto}
+  .gauge .track{fill:none;stroke:rgba(148,163,188,.18);stroke-width:8}
+  .gauge .val{fill:none;stroke:var(--brass);stroke-width:8;stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1.3s cubic-bezier(.2,.7,.2,1)}
+  .gauge .pct{font-family:var(--serif);font-size:26px;fill:var(--parchment)}
+  .gauge .code{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--brass);margin-top:10px}
+  .gauge .name{font-size:12px;color:var(--slate);margin-top:5px;line-height:1.35}
+  @media(max-width:880px){.gauges{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:420px){.gauges{grid-template-columns:1fr}}
+
+  /* ---------- reports ---------- */
+  .report-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;margin-top:10px}
+  .report-list{list-style:none;margin-top:26px}
+  .report-list li{padding:15px 0;border-bottom:1px solid var(--line-soft);display:flex;gap:14px;align-items:center;font-size:15.5px}
+  .report-list li .k{font-family:var(--mono);font-size:11px;color:var(--brass);width:34px;flex:none}
+  .doc-mock{background:linear-gradient(165deg,#fcfbf7,#efe9da);border-radius:6px;padding:30px;color:#2b2f36;box-shadow:var(--shadow);transform:rotate(-1.4deg);border:1px solid #ddd2bc}
+  .doc-mock .dm-head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #c9a24b;padding-bottom:14px}
+  .doc-mock .dm-head .crest{width:26px;height:31px}
+  .doc-mock .dm-head .crest .body,.doc-mock .dm-head .crest .chev{stroke:#9A7A1E}
+  .doc-mock .dm-head .crest .star{fill:#9A7A1E}
+  .doc-mock h4{font-family:var(--serif);font-size:21px;color:#1d2229}
+  .doc-mock .dm-sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:#9A7A1E;text-transform:uppercase}
+  .doc-mock .bar{height:9px;border-radius:5px;background:#e3dac6;margin:12px 0;position:relative;overflow:hidden}
+  .doc-mock .bar i{position:absolute;left:0;top:0;bottom:0;background:#c9a24b;border-radius:5px}
+  .doc-mock .bl{font-size:11px;color:#6a6f78;display:flex;justify-content:space-between;margin-bottom:3px;font-family:var(--mono)}
+  .doc-mock .stamp{margin-top:18px;font-family:var(--serif);font-style:italic;color:#9A7A1E;font-size:13px}
+  @media(max-width:820px){.report-grid{grid-template-columns:1fr;gap:36px}.doc-mock{transform:none;order:-1}}
+
+  /* ---------- packages ---------- */
+  .pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+  .pkg{border:1px solid var(--line-soft);border-radius:6px;padding:30px 26px;display:flex;flex-direction:column;transition:.3s;background:var(--ink)}
+  .pkg:hover{border-color:var(--line);transform:translateY(-5px)}
+  .pkg.feat{border-color:var(--brass);background:linear-gradient(180deg,var(--panel),var(--ink));box-shadow:var(--shadow);position:relative}
+  .pkg.feat::before{content:"Más vendido";position:absolute;top:-12px;left:26px;background:var(--brass);color:var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.12em;padding:5px 12px;text-transform:uppercase;border-radius:2px;font-weight:600}
+  .pkg .pk{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--slate);text-transform:uppercase}
+  .pkg h3{font-size:27px;margin:6px 0 4px}
+  .pkg .who{font-size:13.5px;color:var(--slate);min-height:42px}
+  .pkg .price{font-family:var(--serif);font-size:32px;color:var(--brass-bright);margin:18px 0 2px;line-height:1}
+  .pkg .price small{font-family:var(--mono);font-size:11px;color:var(--slate);letter-spacing:.1em;display:block;margin-top:8px}
+  .pkg ul{list-style:none;margin:22px 0 26px;flex:1}
+  .pkg ul li{font-size:14px;color:var(--parchment-2);padding:8px 0 8px 24px;position:relative;border-bottom:1px solid var(--line-soft)}
+  .pkg ul li::before{content:"";position:absolute;left:0;top:14px;width:9px;height:9px;border:1.6px solid var(--brass);border-top:0;border-right:0;transform:rotate(-45deg);width:10px;height:6px}
+  @media(max-width:860px){.pkgs{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+
+  /* ---------- cases ---------- */
+  .cases{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+  .case{border:1px solid var(--line);border-radius:6px;padding:32px;background:linear-gradient(160deg,var(--panel),var(--ink-2))}
+  .case .badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);display:inline-block;border:1px solid var(--line);padding:5px 11px;border-radius:2px}
+  .case h3{font-size:26px;margin:16px 0 6px;color:var(--parchment)}
+  .case .meta{font-family:var(--mono);font-size:12px;color:var(--slate)}
+  .case p{color:var(--slate);font-size:15px;margin-top:14px}
+  @media(max-width:760px){.cases{grid-template-columns:1fr}}
+
+  /* ---------- benefits ---------- */
+  .ben-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:48px}
+  .ben{padding:26px 20px;border-top:2px solid var(--brass);background:var(--panel-2);border-radius:0 0 4px 4px}
+  .ben h4{font-family:var(--serif);font-size:20px;color:var(--brass-bright);margin-bottom:14px}
+  .ben ul{list-style:none}
+  .ben li{font-size:13.5px;color:var(--slate);padding:6px 0;border-bottom:1px solid var(--line-soft)}
+  @media(max-width:900px){.ben-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.ben-grid{grid-template-columns:1fr}}
+
+  /* ---------- compare ---------- */
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:48px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .cmp .col{padding:34px}
+  .cmp .col.old{background:var(--ink-2)}
+  .cmp .col.new{background:linear-gradient(180deg,#DBBB6A,#C7A047)}
+  .cmp .col h4{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:20px}
+  .cmp .col.old h4{color:var(--slate)}
+  .cmp .col.new h4{color:#4A3A10}
+  .cmp .col li{list-style:none;padding:11px 0 11px 28px;position:relative;font-size:14.5px;border-bottom:1px solid var(--line-soft)}
+  .cmp .col.old li{color:var(--slate-dim)}
+  .cmp .col.old li::before{content:"×";position:absolute;left:0;color:var(--risk);font-weight:700}
+  .cmp .col.new li{color:#241E0C;border-bottom-color:rgba(0,0,0,.14)}
+  .cmp .col.new li::before{content:"✓";position:absolute;left:0;color:#3A2D08;font-weight:700}
+  @media(max-width:680px){.cmp{grid-template-columns:1fr}}
+
+  /* ---------- CTA / contact ---------- */
+  .final{position:relative;padding:100px 0;text-align:center;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 50% 0,rgba(201,162,75,.14),transparent 65%)}
+  .final .wrap{position:relative;z-index:2}
+  .final .crest{width:58px;height:69px;margin:0 auto 24px}
+  .final h2{font-size:clamp(32px,4.6vw,54px);max-width:18ch;margin:0 auto}
+  .final h2 em{font-style:italic;color:var(--brass-bright)}
+  .final p{color:var(--slate);font-size:18px;max-width:52ch;margin:22px auto 0}
+  .final .actions{display:flex;gap:16px;justify-content:center;margin-top:38px;flex-wrap:wrap}
+  .quotes{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:64px}
+  .quotes span{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--slate);border:1px solid var(--line-soft);padding:12px 18px;border-radius:2px}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink-2);border-top:1px solid var(--line-soft);padding:50px 0 36px}
+  .foot{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
+  .foot .brand .name{font-size:21px}
+  .foot p{color:var(--slate-dim);font-size:13px;max-width:38ch;margin-top:14px}
+  .foot .cols{display:flex;gap:54px;flex-wrap:wrap}
+  .foot .cols h5{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:14px}
+  .foot .cols a{display:block;color:var(--slate);font-size:13.5px;padding:5px 0}
+  .foot .cols a:hover{color:var(--parchment)}
+  .foot-base{margin-top:40px;border-top:1px solid var(--line-soft);padding-top:20px;font-family:var(--mono);font-size:11px;color:var(--slate-dim);letter-spacing:.06em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .gauge .val{transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- reusable shield symbol -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crest" viewBox="0 0 100 120">
+    <path class="fillbody" d="M50 5 L92 20 V58 C92 88 73 108 50 116 C27 108 8 88 8 58 V20 Z"/>
+    <path class="body" d="M50 5 L92 20 V58 C92 88 73 108 50 116 C27 108 8 88 8 58 V20 Z"/>
+    <line class="pale" x1="50" y1="14" x2="50" y2="108"/>
+    <path class="chev" d="M22 54 L50 38 L78 54"/>
+    <path class="chev" d="M28 72 L50 58 L72 72"/>
+    <circle class="star" cx="50" cy="24" r="3.4"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Legal Shield inicio">
+      <svg class="crest" aria-hidden="true"><use href="#crest"/></svg>
+      <span class="name"><b>Legal</b> Shield<span class="tag">Protección · Talento · Control</span></span>
+    </a>
+    <nav class="navlinks">
+      <a href="#sistema">El sistema</a>
+      <a href="#tablero">Indicadores</a>
+      <a href="#paquetes">Paquetes</a>
+    </nav>
+    <a href="#contacto" class="btn btn-solid">Agendar diagnóstico</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Sistema integral de protección empresarial</span>
+        <h1>Protegemos a la empresa, fortalecemos a su personal y <em>optimizamos</em> sus resultados.</h1>
+        <p class="lede">Legal Shield no espera a que llegue el problema. Es un modelo preventivo, estratégico y medible que identifica riesgos, blinda procesos y mide el desempeño antes de que una contingencia impacte tu operación.</p>
+        <div class="hero-cta">
+          <a href="#contacto" class="btn btn-solid">Solicitar diagnóstico inicial</a>
+          <a href="#sistema" class="btn btn-ghost">Conocer el sistema</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="n">5</div><div class="l">Ejes estratégicos</div></div>
+          <div><div class="n">5</div><div class="l">Indicadores medibles</div></div>
+          <div><div class="n">25–80</div><div class="l">Empleados · pyme objetivo</div></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg class="crest hero-crest" viewBox="0 0 100 120" aria-label="Emblema Legal Shield">
+          <path class="fillbody" d="M50 5 L92 20 V58 C92 88 73 108 50 116 C27 108 8 88 8 58 V20 Z"/>
+          <path class="body draw" d="M50 5 L92 20 V58 C92 88 73 108 50 116 C27 108 8 88 8 58 V20 Z"/>
+          <line class="pale" x1="50" y1="14" x2="50" y2="108"/>
+          <path class="chev" d="M22 54 L50 38 L78 54"/>
+          <path class="chev" d="M28 72 L50 58 L72 72"/>
+          <circle class="star" cx="50" cy="24" r="3.4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="band" id="problema">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">La realidad de la mayoría de las empresas</span>
+        <p class="pull">El verdadero problema no es la contingencia. Es <span class="hi">no contar con un sistema que permita anticiparla.</span></p>
+      </div>
+      <div class="risk-grid reveal">
+        <div class="cell"><span class="dot"></span>Demandas laborales</div>
+        <div class="cell"><span class="dot"></span>Multas y sanciones administrativas</div>
+        <div class="cell"><span class="dot"></span>Inspecciones de autoridades</div>
+        <div class="cell"><span class="dot"></span>Deficiencias documentales</div>
+        <div class="cell"><span class="dot"></span>Rotación de personal</div>
+        <div class="cell"><span class="dot"></span>Ausentismo</div>
+        <div class="cell"><span class="dot"></span>Falta de indicadores de desempeño</div>
+        <div class="cell"><span class="dot"></span>Procesos internos deficientes</div>
+        <div class="cell"><span class="dot"></span>Expedientes incompletos</div>
+        <div class="cell"><span class="dot"></span>Rescisiones débiles</div>
+        <div class="cell"><span class="dot"></span>Incumplimiento de objetivos</div>
+        <div class="cell"><span class="dot"></span>Decisiones por percepción, no por evidencia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 AXES -->
+  <section class="band band-parch" id="sistema">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">El sistema</span>
+        <h2>Cinco ejes que convierten el área legal y de Capital Humano en un sistema de control.</h2>
+        <p class="muted">Un mismo modelo, trabajado en secuencia: primero entendemos la empresa, luego la blindamos, fortalecemos a su gente, medimos su desempeño y la acompañamos cuando algo ocurre.</p>
+      </div>
+      <div class="axes" style="border-color:#d8cdb5">
+        <div class="axis reveal" style="border-color:#d8cdb5">
+          <div class="num">01<span>Diagnóstico</span></div>
+          <div class="desc-wrap">
+            <h3 style="color:#1d2229">Análisis y diagnóstico empresarial</h3>
+          </div>
+          <div>
+            <p class="desc" style="color:#5C6470">Evaluación integral de cumplimiento laboral, corporativo, fiscal y normativo, procesos de Capital Humano, estructura documental y riesgos operativos. Entregamos un mapa preciso de riesgos, omisiones y áreas vulnerables.</p>
+            <div class="tags"><span>Cumplimiento</span><span>Riesgos</span><span>Documentación</span></div>
+          </div>
+        </div>
+        <div class="axis reveal" style="border-color:#d8cdb5">
+          <div class="num">02<span>Blindaje</span></div>
+          <div class="desc-wrap"><h3 style="color:#1d2229">Prevención y blindaje empresarial</h3></div>
+          <div>
+            <p class="desc" style="color:#5C6470">Implementamos contratos, actas, políticas, protocolos y controles documentales para evitar sanciones, reducir demandas y corregir deficiencias. Cada decisión laboral queda respaldada con evidencia y procedimiento.</p>
+            <div class="tags"><span>Contratos</span><span>Actas</span><span>Protocolos</span></div>
+          </div>
+        </div>
+        <div class="axis reveal" style="border-color:#d8cdb5">
+          <div class="num">03<span>Talento</span></div>
+          <div class="desc-wrap"><h3 style="color:#1d2229">Gestión estratégica de Capital Humano</h3></div>
+          <div>
+            <p class="desc" style="color:#5C6470">Capacitamos al área para que deje de ser administrativa y se vuelva estratégica: blindaje laboral, cumplimiento STPS, protección de datos personales y gestión de crisis laborales con respaldo jurídico.</p>
+            <div class="tags"><span>STPS</span><span>Datos ARCO</span><span>Crisis laborales</span></div>
+          </div>
+        </div>
+        <div class="axis reveal" style="border-color:#d8cdb5">
+          <div class="num">04<span>Desempeño</span></div>
+          <div class="desc-wrap"><h3 style="color:#1d2229">Sistema de KPIs y gestión del desempeño</h3></div>
+          <div>
+            <p class="desc" style="color:#5C6470">El diferenciador. Diseñamos KPIs por puesto —ventas, operaciones, administración y gerencias—, damos seguimiento, documentamos incumplimientos y generamos evidencia para planes de mejora con sustento jurídico.</p>
+            <div class="tags"><span>KPIs por puesto</span><span>Evidencia</span><span>Planes de mejora</span></div>
+          </div>
+        </div>
+        <div class="axis reveal" style="border-color:#d8cdb5">
+          <div class="num">05<span>Respaldo</span></div>
+          <div class="desc-wrap"><h3 style="color:#1d2229">Acompañamiento y atención inmediata</h3></div>
+          <div>
+            <p class="desc" style="color:#5C6470">Respuesta estratégica ante demandas, inspecciones, auditorías, requerimientos y conflictos laborales. La empresa nunca enfrenta una contingencia sola.</p>
+            <div class="tags"><span>Demandas</span><span>Inspecciones</span><span>Urgencias</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD / KPI -->
+  <section class="band" id="tablero">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Indicadores Legal Shield</span>
+        <h2>Lo que no se mide, no se puede mejorar.</h2>
+        <p>Convertimos el estado legal y operativo de tu empresa en cinco indicadores que la Dirección General puede leer de un vistazo, mes con mes. (Valores ilustrativos de un tablero típico.)</p>
+      </div>
+      <div class="dash reveal">
+        <div class="dash-top">
+          <span class="t">Tablero ejecutivo · Reporte mensual</span>
+          <span class="live">Seguimiento activo</span>
+        </div>
+        <div class="gauges" id="gauges">
+          <div class="gauge" data-val="74">
+            <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="48"/><circle class="val" cx="60" cy="60" r="48"/><text class="pct" x="60" y="68" text-anchor="middle">0%</text></svg>
+            <div class="code">IRL</div><div class="name">Riesgo Laboral</div>
+          </div>
+          <div class="gauge" data-val="88">
+            <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="48"/><circle class="val" cx="60" cy="60" r="48"/><text class="pct" x="60" y="68" text-anchor="middle">0%</text></svg>
+            <div class="code">IBL</div><div class="name">Blindaje Laboral</div>
+          </div>
+          <div class="gauge" data-val="81">
+            <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="48"/><circle class="val" cx="60" cy="60" r="48"/><text class="pct" x="60" y="68" text-anchor="middle">0%</text></svg>
+            <div class="code">ICD</div><div class="name">Cumplimiento Documental</div>
+          </div>
+          <div class="gauge" data-val="69">
+            <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="48"/><circle class="val" cx="60" cy="60" r="48"/><text class="pct" x="60" y="68" text-anchor="middle">0%</text></svg>
+            <div class="code">IES</div><div class="name">Exposición STPS</div>
+          </div>
+          <div class="gauge" data-val="77">
+            <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="48"/><circle class="val" cx="60" cy="60" r="48"/><text class="pct" x="60" y="68" text-anchor="middle">0%</text></svg>
+            <div class="code">IDO</div><div class="name">Desempeño Organizacional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTS -->
+  <section class="band band-parch" id="reportes">
+    <div class="wrap">
+      <div class="report-grid">
+        <div class="reveal">
+          <span class="eyebrow">Reportes ejecutivos mensuales</span>
+          <h2 style="color:#1d2229;font-size:clamp(28px,3.6vw,42px);margin-top:16px">La Dirección General deja de operar a ciegas.</h2>
+          <p class="muted" style="margin-top:16px">Cada mes entregamos un reporte claro y medible para que las decisiones se tomen con información real, evidencia documental y respaldo jurídico.</p>
+          <ul class="report-list">
+            <li><span class="k">01</span>Estado legal de la empresa y riesgos detectados</li>
+            <li><span class="k">02</span>Nivel de cumplimiento documental y STPS</li>
+            <li><span class="k">03</span>Desempeño por área y cumplimiento de KPIs</li>
+            <li><span class="k">04</span>Planes de acción y acciones correctivas</li>
+            <li><span class="k">05</span>Recomendaciones estratégicas y minutas de seguimiento</li>
+          </ul>
+        </div>
+        <div class="doc-mock reveal" aria-hidden="true">
+          <div class="dm-head">
+            <div>
+              <h4>Reporte Ejecutivo</h4>
+              <div class="dm-sub">Legal Shield · Mensual</div>
+            </div>
+            <svg class="crest"><use href="#crest"/></svg>
+          </div>
+          <div style="margin-top:18px">
+            <div class="bl"><span>IBL · Blindaje Laboral</span><span>88%</span></div>
+            <div class="bar"><i style="width:88%"></i></div>
+            <div class="bl"><span>ICD · Cumplimiento Documental</span><span>81%</span></div>
+            <div class="bar"><i style="width:81%"></i></div>
+            <div class="bl"><span>IDO · Desempeño</span><span>77%</span></div>
+            <div class="bar"><i style="width:77%"></i></div>
+            <div class="bl"><span>IES · Exposición STPS</span><span>69%</span></div>
+            <div class="bar"><i style="width:69%"></i></div>
+          </div>
+          <div class="stamp">— Demandas evitadas este mes: 3 · Expedientes regularizados: 21</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="band" id="paquetes">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Paquetes comerciales</span>
+        <h2>Un nivel de protección para cada etapa de tu empresa.</h2>
+        <p>Servicio mensual, adaptable al tamaño y a la exposición real de la organización. Precios de referencia en pesos mexicanos.</p>
+      </div>
+      <div class="pkgs">
+        <div class="pkg reveal">
+          <span class="pk">Nivel 1</span>
+          <h3>Básico</h3>
+          <p class="who">Pequeñas empresas que necesitan orden legal y laboral.</p>
+          <div class="price">$18,000 – $25,000<small>MXN / mensuales</small></div>
+          <ul>
+            <li>Diagnóstico inicial</li>
+            <li>Revisión de contratos y expedientes</li>
+            <li>Formatos de actas y amonestación</li>
+            <li>Asesoría mensual limitada</li>
+            <li>Reporte mensual básico</li>
+          </ul>
+          <a href="#contacto" class="btn btn-ghost" style="text-align:center">Más información</a>
+        </div>
+        <div class="pkg feat reveal">
+          <span class="pk">Nivel 2</span>
+          <h3>Empresarial</h3>
+          <p class="who">Pymes con personal operativo, ventas, administración y gerencias.</p>
+          <div class="price">$35,000 – $55,000<small>MXN / mensuales</small></div>
+          <ul>
+            <li>Todo lo del paquete Básico</li>
+            <li>Reglamento interior y políticas internas</li>
+            <li>Sistema básico de KPIs</li>
+            <li>Capacitación a Capital Humano</li>
+            <li>Soporte ante conflictos laborales</li>
+            <li>Reporte ejecutivo y matriz de riesgos</li>
+          </ul>
+          <a href="#contacto" class="btn btn-solid" style="text-align:center">Solicitar propuesta</a>
+        </div>
+        <div class="pkg reveal">
+          <span class="pk">Nivel 3</span>
+          <h3>Premium</h3>
+          <p class="who">Empresas con alta exposición, varias áreas o riesgo de inspecciones.</p>
+          <div class="price">$60,000 – $95,000<small>MXN / mensuales</small></div>
+          <ul>
+            <li>Todo lo del paquete Empresarial</li>
+            <li>Sistema completo de KPIs por puesto</li>
+            <li>Acompañamiento ante inspecciones</li>
+            <li>Auditorías internas periódicas</li>
+            <li>Reunión mensual con Dirección General</li>
+            <li>Indicadores IRL · IBL · ICD · IES · IDO</li>
+          </ul>
+          <a href="#contacto" class="btn btn-ghost" style="text-align:center">Más información</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Beneficios para la empresa</span>
+        <h2>Protección que se nota en lo jurídico, lo operativo y lo financiero.</h2>
+      </div>
+      <div class="ben-grid">
+        <div class="ben reveal"><h4>Jurídicos</h4><ul><li>Seguridad jurídica permanente</li><li>Menos demandas</li><li>Prevención de sanciones</li><li>Cumplimiento normativo</li></ul></div>
+        <div class="ben reveal"><h4>Operativos</h4><ul><li>Procesos más eficientes</li><li>Mayor control interno</li><li>Mejor organización</li></ul></div>
+        <div class="ben reveal"><h4>Financieros</h4><ul><li>Reducción de costos</li><li>Optimización de recursos</li><li>Menor impacto por contingencias</li></ul></div>
+        <div class="ben reveal"><h4>Capital Humano</h4><ul><li>Mejor desempeño</li><li>Mayor productividad</li><li>Seguimiento de objetivos</li><li>Desarrollo del talento</li></ul></div>
+        <div class="ben reveal"><h4>Estratégicos</h4><ul><li>Información para decidir</li><li>Cultura de prevención</li><li>Crecimiento sostenible</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="band band-parch">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">El diferenciador</span>
+        <h2 style="color:#1d2229">No solo defiende: controla, previene y mejora.</h2>
+      </div>
+      <div class="cmp reveal">
+        <div class="col old">
+          <h4>Asesoría legal tradicional</h4>
+          <ul>
+            <li>Actúa cuando ya existe el problema</li>
+            <li>Trabaja de forma reactiva</li>
+            <li>No siempre genera indicadores</li>
+            <li>No fortalece procesos internos</li>
+            <li>No mide el desempeño del personal</li>
+          </ul>
+        </div>
+        <div class="col new">
+          <h4>Legal Shield</h4>
+          <ul>
+            <li>Previene riesgos antes de que ocurran</li>
+            <li>Ordena documentación y procesos</li>
+            <li>Crea KPIs y genera evidencia</li>
+            <li>Capacita a Capital Humano</li>
+            <li>Entrega reportes ejecutivos mensuales</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA + CONTACT -->
+  <section class="final" id="contacto">
+    <div class="wrap">
+      <svg class="crest"><use href="#crest"/></svg>
+      <h2 class="reveal">Dejar de improvisar. Empezar a operar con <em>orden, prevención y evidencia.</em></h2>
+      <p class="reveal">El costo de prevenir siempre será menor que el costo de corregir una demanda, una multa o una crisis laboral. Empecemos por un diagnóstico de tu empresa.</p>
+      <div class="actions reveal">
+        <a href="https://wa.me/520000000000?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20de%20Legal%20Shield" target="_blank" rel="noopener" class="btn btn-solid">Agendar diagnóstico por WhatsApp</a>
+        <a href="mailto:contacto@legalshield.mx?subject=Diagn%C3%B3stico%20Legal%20Shield" class="btn btn-ghost">Escribir un correo</a>
+      </div>
+      <div class="quotes reveal">
+        <span>“Prevenir una demanda cuesta menos que defenderla.”</span>
+        <span>“Lo que no se documenta, no se puede defender.”</span>
+        <span>“Capital Humano debe ser estratégico, no solo administrativo.”</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand">
+          <svg class="crest" style="width:28px;height:34px"><use href="#crest"/></svg>
+          <span class="name"><b>Legal</b> Shield</span>
+        </div>
+        <p>Sistema integral de protección jurídica, gestión del talento y control empresarial. Protegemos a la empresa, fortalecemos a su personal y optimizamos sus resultados.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h5>Sistema</h5>
+          <a href="#sistema">Los 5 ejes</a>
+          <a href="#tablero">Indicadores</a>
+          <a href="#reportes">Reportes</a>
+        </div>
+        <div>
+          <h5>Comercial</h5>
+          <a href="#paquetes">Paquetes</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <a href="mailto:contacto@legalshield.mx">contacto@legalshield.mx</a>
+          <a href="https://wa.me/520000000000" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© <span id="yr"></span> Legal Shield · Más control. Más productividad. Menos riesgos.</span>
+      <span>Página conceptual de presentación</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // scroll reveal
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.16});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // hero crest draw-in
+  const draw = document.querySelector('.hero-crest .draw');
+  if(draw && !reduce){
+    const len = draw.getTotalLength();
+    draw.style.strokeDasharray = len;
+    draw.style.strokeDashoffset = len;
+    draw.style.transition = 'stroke-dashoffset 1.8s ease .2s';
+    requestAnimationFrame(()=>{ draw.style.strokeDashoffset = 0; });
+  }
+
+  // gauges
+  const gWrap = document.getElementById('gauges');
+  const R = 48, C = 2 * Math.PI * R;
+  document.querySelectorAll('.gauge .val').forEach(v=>{
+    v.style.strokeDasharray = C;
+    v.style.strokeDashoffset = C;
+  });
+  const gio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      document.querySelectorAll('.gauge').forEach((g,i)=>{
+        const val = +g.dataset.val;
+        const ring = g.querySelector('.val');
+        const txt  = g.querySelector('.pct');
+        const target = C - (val/100)*C;
+        setTimeout(()=>{
+          ring.style.strokeDashoffset = reduce ? target : target;
+          if(reduce){ txt.textContent = val + '%'; return; }
+          let cur = 0;
+          const step = ()=>{ cur += Math.ceil(val/28); if(cur>=val){cur=val;} txt.textContent = cur + '%'; if(cur<val) requestAnimationFrame(step); };
+          step();
+        }, reduce ? 0 : i*140);
+      });
+      gio.disconnect();
+    });
+  },{threshold:.4});
+  if(gWrap) gio.observe(gWrap);
+</script>
+</body>
+</html>
