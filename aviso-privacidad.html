@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviso de Privacidad — Legal Shield</title>
+<meta name="description" content="Aviso de privacidad integral de Legal Shield conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C1422;--ink-2:#08101C;--panel:#121E33;
+    --brass:#C9A24B;--brass-bright:#E7CD86;--parchment:#F5F0E5;
+    --slate:#94A3BC;--slate-dim:#6C7A92;--line:rgba(201,162,75,.22);--line-soft:rgba(148,163,188,.16);
+    --serif:"Cormorant Garamond",Georgia,serif;--sans:"Archivo",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--parchment);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--brass);text-decoration:none}
+  a:hover{color:var(--brass-bright)}
+  ::selection{background:var(--brass);color:var(--ink)}
+  .wrap{max-width:840px;margin:0 auto;padding:0 28px}
+
+  /* shield */
+  .crest{width:28px;height:34px;flex:none}
+  .crest .body{fill:none;stroke:var(--brass);stroke-width:2.4}
+  .crest .fillbody{fill:rgba(201,162,75,.06)}
+  .crest .chev{fill:none;stroke:var(--brass-bright);stroke-width:2.2}
+  .crest .pale{stroke:var(--brass);stroke-width:1.4;opacity:.55}
+  .crest .star{fill:var(--brass-bright)}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(12,20,34,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .name{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.02em;line-height:1}
+  .brand .name b{color:var(--brass)}
+  .back{font-size:13.5px;color:var(--slate)}
+  .back:hover{color:var(--parchment)}
+
+  .hero{padding:72px 0 26px;border-bottom:1px solid var(--line-soft)}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:24px;height:1px;background:var(--brass);opacity:.7}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1.05;letter-spacing:-.01em;margin:18px 0 0}
+  .updated{font-family:var(--mono);font-size:12px;color:var(--slate-dim);margin-top:20px;letter-spacing:.04em}
+
+  main{padding:42px 0 30px}
+  .lead{font-size:17.5px;color:var(--parchment);max-width:70ch}
+  .lead em{color:var(--brass-bright);font-style:italic}
+
+  section.clause{margin-top:42px;padding-top:34px;border-top:1px solid var(--line-soft)}
+  section.clause:first-of-type{border-top:0;padding-top:0}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(23px,3vw,30px);line-height:1.12;color:var(--parchment);display:flex;gap:16px;align-items:baseline}
+  h2 .no{font-family:var(--mono);font-size:13px;color:var(--brass);letter-spacing:.08em;flex:none;padding-top:6px}
+  .clause p{color:var(--slate);margin-top:14px;max-width:72ch}
+  .clause p strong,.clause li strong{color:var(--parchment);font-weight:600}
+  .clause ul{list-style:none;margin:16px 0 0}
+  .clause li{color:var(--slate);padding:8px 0 8px 22px;position:relative;max-width:72ch;border-bottom:1px solid var(--line-soft)}
+  .clause li:last-child{border-bottom:0}
+  .clause li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:7px;border-radius:50%;background:var(--brass);opacity:.7}
+  .fill{color:var(--brass-bright);background:rgba(201,162,75,.10);border:1px solid var(--line);border-radius:3px;padding:1px 7px;font-family:var(--mono);font-size:13px}
+  .box{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--brass);border-radius:0 5px 5px 0;padding:20px 22px}
+  .box p{margin-top:0}
+  .box .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px solid var(--line-soft);font-size:14.5px;flex-wrap:wrap}
+  .box .row:last-child{border-bottom:0}
+  .box .row .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);width:140px;flex:none}
+  .box .row .v{color:var(--parchment)}
+
+  .disc{margin-top:46px;padding:22px 24px;background:var(--ink-2);border:1px solid var(--line-soft);border-radius:6px;font-size:13.5px;color:var(--slate-dim);font-style:italic}
+
+  footer{border-top:1px solid var(--line-soft);padding:34px 0;margin-top:40px}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;color:var(--slate-dim);letter-spacing:.05em}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crest" viewBox="0 0 100 120">
+    <path class="fillbody" d="M50 5 L92 20 V58 C92 88 73 108 50 116 C27 108 8 88 8 58 V20 Z"/>
+    <path class="body" d="M50 5 L92 20 V58 C92 88 73 108 50 116 C27 108 8 88 8 58 V20 Z"/>
+    <line class="pale" x1="50" y1="14" x2="50" y2="108"/>
+    <path class="chev" d="M22 54 L50 38 L78 54"/>
+    <path class="chev" d="M28 72 L50 58 L72 72"/>
+    <circle class="star" cx="50" cy="24" r="3.4"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Volver a Legal Shield">
+      <svg class="crest" aria-hidden="true"><use href="#crest"/></svg>
+      <span class="name"><b>Legal</b> Shield</span>
+    </a>
+    <a class="back" href="index.html">← Volver al inicio</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Documento legal</span>
+    <h1>Aviso de Privacidad Integral</h1>
+    <div class="updated">Última actualización: 24 de junio de 2026</div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <p class="lead">En cumplimiento de la <em>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</em> (publicada el 20 de marzo de 2025), ponemos a tu disposición este aviso para informarte cómo tratamos tus datos personales.</p>
+
+    <section class="clause">
+      <h2><span class="no">01</span> Identidad y domicilio del responsable</h2>
+      <p>El responsable del tratamiento de tus datos personales es:</p>
+      <div class="box">
+        <div class="row"><span class="k">Responsable</span><span class="v"><span class="fill">[Nombre o razón social]</span> ("Legal Shield")</span></div>
+        <div class="row"><span class="k">Domicilio</span><span class="v"><span class="fill">[Domicilio fiscal completo]</span></span></div>
+        <div class="row"><span class="k">Correo</span><span class="v">contacto@legalshield.mx</span></div>
+        <div class="row"><span class="k">Teléfono / WhatsApp</span><span class="v">55 7619 4901 — Osiris Rodas</span></div>
+      </div>
+    </section>
+
+    <section class="clause">
+      <h2><span class="no">02</span> Datos personales que recabamos</h2>
+      <p>Para las finalidades de este aviso, podemos recabar las siguientes categorías de datos, ya sea cuando nos contactas por WhatsApp, correo electrónico o cualquier otro medio que pongamos a tu disposición:</p>
+      <ul>
+        <li><strong>De identificación y contacto:</strong> nombre, teléfono, correo electrónico y, en su caso, el nombre y cargo dentro de la empresa que representas.</li>
+        <li><strong>Datos de la empresa:</strong> razón social, giro, número aproximado de empleados, número de sedes y datos generales necesarios para preparar una propuesta de servicio.</li>
+      </ul>
+      <p>Legal Shield <strong>no recaba datos personales sensibles</strong> a través de este sitio web. En caso de que la prestación del servicio llegara a requerir el tratamiento de datos de tus colaboradores, se celebrará el instrumento correspondiente que regule dicho tratamiento.</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="no">03</span> Finalidades del tratamiento</h2>
+      <p><strong>Finalidades primarias</strong> (necesarias para la relación y que no requieren tu consentimiento adicional):</p>
+      <ul>
+        <li>Atender tus solicitudes de información, cotización o contacto.</li>
+        <li>Elaborar y presentarte propuestas de servicio a la medida de tu empresa.</li>
+        <li>Prestar, dar seguimiento y administrar los servicios contratados.</li>
+        <li>Emitir comprobantes y cumplir obligaciones fiscales y legales aplicables.</li>
+      </ul>
+      <p><strong>Finalidades secundarias</strong> (no son necesarias para la relación y <strong>requieren tu consentimiento</strong>):</p>
+      <ul>
+        <li>Enviarte información comercial, novedades y promociones de Legal Shield.</li>
+        <li>Realizar encuestas, estudios y análisis para mejorar nuestros servicios.</li>
+      </ul>
+      <p>Si no deseas que tus datos se utilicen para las finalidades secundarias, puedes manifestarlo escribiendo a <a href="mailto:contacto@legalshield.mx">contacto@legalshield.mx</a>. Tu negativa no será motivo para negarte los servicios que solicites.</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="no">04</span> Opciones para limitar el uso o divulgación</h2>
+      <p>Puedes limitar el uso o divulgación de tus datos enviando tu solicitud al correo <a href="mailto:contacto@legalshield.mx">contacto@legalshield.mx</a>. Asimismo, podrás solicitar tu inclusión en nuestro listado de exclusión interno para dejar de recibir comunicaciones comerciales.</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="no">05</span> Medios para ejercer tus derechos ARCO y revocar el consentimiento</h2>
+      <p>Como titular, tienes derecho a <strong>Acceder</strong> a tus datos personales, solicitar su <strong>Rectificación</strong> cuando sean inexactos o estén desactualizados, su <strong>Cancelación</strong> cuando consideres que no se requieren, y a <strong>Oponerte</strong> a su tratamiento (derechos ARCO). También puedes revocar en cualquier momento el consentimiento que nos hayas otorgado.</p>
+      <p>Para ejercer cualquiera de estos derechos, envía tu solicitud a <a href="mailto:contacto@legalshield.mx">contacto@legalshield.mx</a> indicando: tu nombre y medio de contacto, una descripción clara de los datos y del derecho que deseas ejercer, y la documentación que acredite tu identidad. Daremos respuesta en un plazo máximo de <strong>20 días hábiles</strong>.</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="no">06</span> Transferencias de datos</h2>
+      <p>Tus datos personales <strong>no serán transferidos a terceros</strong> sin tu consentimiento, salvo en los supuestos previstos por la ley, como cuando la transferencia sea necesaria para cumplir una obligación legal o sea requerida por autoridad competente mediante orden o mandato fundado y motivado. En su caso, podremos compartir datos con proveedores que nos auxilien en la prestación del servicio (por ejemplo, contables o tecnológicos), quienes asumen las mismas obligaciones de protección.</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="no">07</span> Uso de cookies y tecnologías de rastreo</h2>
+      <p>Este sitio se aloja en una red de distribución de contenidos que puede utilizar cookies técnicas o registros de actividad con fines de seguridad y funcionamiento. Estas no recaban datos que te identifiquen directamente. Puedes deshabilitar las cookies desde la configuración de tu navegador.</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="no">08</span> Cambios al aviso de privacidad</h2>
+      <p>Este aviso puede modificarse en cualquier momento para atender cambios legislativos, internos o en nuestras prácticas. Cualquier actualización estará disponible en esta misma página, indicando la fecha de su última versión en la parte superior.</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="no">09</span> Autoridad en materia de protección de datos</h2>
+      <p>Si consideras que tu derecho a la protección de datos personales ha sido vulnerado, puedes acudir a la <strong>Secretaría Anticorrupción y Buen Gobierno</strong>, autoridad encargada en México de la protección de datos personales en posesión de los particulares (que sustituyó al extinto INAI).</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="no">10</span> Consentimiento</h2>
+      <p>Al proporcionarnos tus datos personales por cualquier medio y no manifestar oposición, otorgas tu consentimiento para que sean tratados conforme a los términos de este aviso de privacidad.</p>
+    </section>
+
+    <div class="disc">
+      Este aviso es un modelo de referencia conforme a la legislación mexicana vigente y debe completarse con los datos reales del responsable (los campos marcados <span class="fill">[entre corchetes]</span>) y, de preferencia, ser revisado por un profesional legal antes de su publicación definitiva.
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> Legal Shield · Protección Jurídica · Gestión del Talento · Control Empresarial</span>
+    <a href="index.html">Volver al inicio</a>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
